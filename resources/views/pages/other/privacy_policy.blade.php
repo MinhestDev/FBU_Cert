@@ -7,132 +7,132 @@
         <div class="content">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="card-title font-weight-bold text-center">PRIVACY POLICY</h1>
+                    <h1 class="card-title font-weight-bold text-center">CHÍNH SÁCH BẢO MẬT</h1>
                 </div>
 
                 <div class="card-body">
                     <div class="row">
                         <div style="font-size: 16px;" class="col-md-10 offset-md-1">
-                            <p>Last modified: November 4, 2019</p>
+                            <p>Chỉnh sửa lần cuối: 4 tháng 11, 2019</p>
 
-                            <h4 class="font-weight-semibold">Introduction</h4>
+                            <h4 class="font-weight-semibold">Giới thiệu</h4>
 
-                            <p>{{ $app_name }} ("We") respects your privacy and is committed to protecting it through our compliance with this policy.</p>
+                            <p>{{ $app_name }} ("Chúng tôi") tôn trọng quyền riêng tư của bạn và cam kết bảo vệ nó thông qua việc tuân thủ chính sách này.</p>
 
-                            <p>This policy describes the types of information we may collect from you or that you may provide when you visit the website
-                                <a target="_blank" href="{{ $app_url }}">{{ $app_url }}</a> (our "Website") and our practices for collecting, using, maintaining, protecting, and disclosing that information.</p>
+                            <p>Chính sách này mô tả các loại thông tin chúng tôi có thể thu thập từ bạn hoặc bạn có thể cung cấp khi bạn truy cập trang web
+                                <a target="_blank" href="{{ $app_url }}">{{ $app_url }}</a> (trang web của chúng tôi) và các thực hành của chúng tôi trong việc thu thập, sử dụng, bảo vệ và tiết lộ thông tin đó.</p>
 
-                            <p>This policy applies to information we collect:</p>
-
-                            <ul>
-                                <li>On this Website.</li>
-                                <li>In email, text, and other electronic messages between you and this Website.</li>
-                            </ul>
-
-                           <p> Please read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, your choice is to not use our Website. By accessing or using this Website, you agree to this privacy policy. This policy may change from time to time (see Changes to Our Privacy Policy). Your continued use of this Website after we make changes is deemed to be acceptance of those changes, so please check the policy periodically for updates.</p>
-
-                            <h4 class="font-weight-semibold">Children Under the Age of 13</h4>
-
-                           <p> We do not knowingly collect personal information from children under 13. If you are under 13, do not provide any information on this Website or on or through any of its features without first obtaining parental consent. If we learn we have collected or received personal information from a child under 13 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under 13, please call {{ $contact_phone }}</p>
-
-                            <h4 class="font-weight-semibold">Information We Collect About You and How We Collect It</h4>
-
-                            <p>We collect several types of information from and about users of our Website, including information:</p>
+                            <p>Chính sách này áp dụng cho thông tin chúng tôi thu thập:</p>
 
                             <ul>
-                                <li>by which you may be personally identified ("personal information");</li>
-                                <li>that is about you but individually does not identify you; and/or</li>
-                                <li>about your internet connection, the equipment you use to access our Website, and usage details.</li>
+                                <li>Trên trang web này.</li>
+                                <li>Trong email, tin nhắn văn bản và các tin nhắn điện tử khác giữa bạn và trang web này.</li>
                             </ul>
 
-                            <p>We collect this information:</p>
+                           <p> Vui lòng đọc chính sách này cẩn thận để hiểu rõ các chính sách và thực hành của chúng tôi đối với thông tin của bạn và cách chúng tôi sẽ xử lý nó. Nếu bạn không đồng ý với các chính sách và thực hành của chúng tôi, lựa chọn của bạn là không sử dụng trang web của chúng tôi. Bằng cách truy cập hoặc sử dụng trang web này, bạn đồng ý với chính sách bảo mật này. Chính sách này có thể thay đổi từ thời gian này sang thời gian khác (xem Thay đổi chính sách bảo mật của chúng tôi). Việc sử dụng tiếp tục trang web này sau khi chúng tôi thực hiện các thay đổi được coi là chấp nhận của những thay đổi đó, vì vậy vui lòng kiểm tra chính sách định kỳ cho các cập nhật.</p>
+
+                            <h4 class="font-weight-semibold">Trẻ em Dưới 13 Tuổi</h4>
+
+                           <p> Chúng tôi không có ý định thu thập thông tin cá nhân từ trẻ em dưới 13 tuổi. Nếu bạn dưới 13 tuổi, đừng cung cấp bất kỳ thông tin nào trên trang web này hoặc qua bất kỳ tính năng nào của nó mà không trước tiên có được sự đồng ý của phụ huynh. Nếu chúng tôi phát hiện chúng tôi đã thu thập hoặc nhận thông tin cá nhân từ một đứa trẻ dưới 13 tuổi mà không xác minh được sự đồng ý của phụ huynh, chúng tôi sẽ xóa thông tin đó. Nếu bạn tin rằng chúng tôi có thể có bất kỳ thông tin nào từ hoặc về một đứa trẻ dưới 13 tuổi, vui lòng gọi {{ $contact_phone }}</p>
+
+                            <h4 class="font-weight-semibold">Thông Tin Chúng Tôi Thu Thập Về Bạn và Cách Chúng Tôi Thu Thập Nó</h4>
+
+                            <p>Chúng tôi thu thập một số loại thông tin từ và về người dùng của trang web của chúng tôi, bao gồm thông tin:</p>
 
                             <ul>
-                                <li>Directly from you when you provide it to us.</li>
-                                <li>Automatically as you navigate through the site. Information collected automatically may include usage details, IP addresses, and information collected through cookies or other tracking technologies.</li>
+                                <li>Mà bạn có thể được nhận dạng cá nhân ("thông tin cá nhân");</li>
+                                <li>Về bạn nhưng cá nhân không nhận diện bạn; và / hoặc</li>
+                                <li>Về kết nối internet của bạn, thiết bị bạn sử dụng để truy cập trang web của chúng tôi và chi tiết sử dụng.</li>
                             </ul>
 
-                            <h4 class="font-weight-semibold">Information You Provide to Us. The information we collect on or through our Website may include:</h4>
+                            <p>Chúng tôi thu thập thông tin này:</p>
 
                             <ul>
-                                <li>Information that you provide by filling in forms or surveys on our Website. Personal information submitted will not be transferred to any non-affiliated third parties unless otherwise stated at the time of collection. When you submit personal information, it is used only for the purpose stated at the time of collection.</li>
-                                <li>Records and copies of your correspondence (including email addresses), if you contact us.</li>
+                                <li>Trực tiếp từ bạn khi bạn cung cấp thông tin cho chúng tôi.</li>
+                                <li>Tự động khi bạn duyệt qua trang web. Thông tin thu thập tự động có thể bao gồm chi tiết về việc sử dụng, địa chỉ IP và thông tin thu thập thông qua cookie hoặc các công nghệ theo dõi khác.</li>
                             </ul>
 
-                            <h4 class="font-weight-semibold">Information We Collect Through Automatic Data Collection Technologies:</h4>
-
-                            <p>As you navigate through and interact with our Website, we may use automatic data collection technologies to collect certain information about your equipment, browsing actions, and patterns, including:</p>
+                            <h4 class="font-weight-semibold">Thông Tin Bạn Cung Cấp Cho Chúng Tôi. Thông tin chúng tôi thu thập trên trang web của chúng tôi có thể bao gồm:</h4>
 
                             <ul>
-                                <li>Details of your visits to our Website, including traffic data, location data, logs, and other communication data and the resources that you access and use on the Website.</li>
-                                <li>Information about your computer and internet connection, including your IP address, operating system, and browser type.</li>
+                                <li>Thông tin bạn cung cấp bằng cách điền vào các biểu mẫu hoặc cuộc khảo sát trên trang web của chúng tôi. Thông tin cá nhân được gửi sẽ không được chuyển đến bất kỳ bên thứ ba không liên quan nào trừ khi có quy định khác tại thời điểm thu thập. Khi bạn gửi thông tin cá nhân, nó chỉ được sử dụng cho mục đích đã nêu tại thời điểm thu thập.</li>
+                                <li>Bản ghi và bản sao của tài liệu tương tác (bao gồm địa chỉ email), nếu bạn liên hệ với chúng tôi.</li>
                             </ul>
 
-                            <p>The information we collect automatically is statistical data and may include personal information, and we may maintain it or associate it with personal information we collect in other ways or receive from third parties. It helps us to improve our Website and to deliver a better and more personalized service, including by enabling us to:</p>
+                            <h4 class="font-weight-semibold">Thông Tin Chúng Tôi Thu Thập Thông Qua Các Công Nghệ Tự Động Thu Thập Dữ Liệu:</h4>
+
+                            <p>Khi bạn duyệt qua và tương tác với trang web của chúng tôi, chúng tôi có thể sử dụng các công nghệ tự động thu thập dữ liệu để thu thập một số thông tin về thiết bị, hành động duyệt web và mẫu, bao gồm:</p>
 
                             <ul>
-                                <li>Estimate our audience size and usage patterns.</li>
-                                <li>Speed up your searches.</li>
-                                <li>Recognize you when you return to our Website.</li>
+                                <li>Chi tiết về lượt truy cập trang web của chúng tôi, bao gồm dữ liệu lưu lượng, dữ liệu vị trí, nhật ký và dữ liệu giao tiếp khác và các nguồn tài nguyên mà bạn truy cập và sử dụng trên trang web.</li>
+                                <li>Thông tin về máy tính và kết nối internet của bạn, bao gồm địa chỉ IP, hệ điều hành và loại trình duyệt.</li>
                             </ul>
 
-                            <p>The technologies we use for this automatic data collection may include:</p>
+                            <p>Thông tin chúng tôi thu thập tự động là dữ liệu thống kê và có thể bao gồm thông tin cá nhân và chúng tôi có thể duy trì hoặc kết hợp nó với thông tin cá nhân chúng tôi thu thập theo cách khác hoặc nhận được từ bên thứ ba. Nó giúp chúng tôi cải thiện trang web của chúng tôi và cung cấp dịch vụ tốt hơn và cá nhân hóa hơn, bao gồm bằng cách cho phép chúng tôi:</p>
 
                             <ul>
-                                <li><strong>Cookies</strong> (or browser cookies). A cookie is a small file placed on the hard drive of your computer. You may refuse to accept browser cookies by activating the appropriate setting on your browser. However, if you select this setting you may be unable to access certain parts of our Website. Unless you have adjusted your browser setting so that it will refuse cookies, our system will issue cookies when you direct your browser to our Website.</li>
-                                <li><strong>Flash Cookies.</strong> Certain features of our Website may use local stored objects (or Flash cookies) to collect and store information about your preferences and navigation to, from, and on our Website. Flash cookies are not managed by the same browser settings as are used for browser cookies. For information about managing your privacy and security settings for Flash cookies, see Choices About How We Use and Disclose Your Information.</li>
-                                <li><strong>Web Beacons.</strong> Pages of our Website may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit us, for example, to count users who have visited those pages and for other related website statistics (for example, recording the popularity of certain website content and verifying system and server integrity).</li>
+                                <li>Ước lượng kích thước đối tượng của khán giả và mẫu sử dụng.</li>
+                                <li>Tăng tốc độ tìm kiếm của bạn.</li>
+                                <li>Nhận dạng bạn khi bạn quay lại trang web của chúng tôi.</li>
                             </ul>
 
-                            <h4 class="font-weight-semibold">How We Use Your Information</h4>
-
-                            <p>We use information that we collect about you or that you provide to us, including any personal information:</p>
+                            <p>Các công nghệ chúng tôi sử dụng cho việc thu thập tự động dữ liệu này có thể bao gồm:</p>
 
                             <ul>
-                                <li>To present our Website and its contents to you.</li>
-                                <li>To allow you to participate in interactive features on our Website.</li>
-                                <li>In any other way we may describe when you provide the information.</li>
-                                <li>For any other purpose with your consent.</li>
+                                <li><strong>Cookies</strong> (hoặc cookie trình duyệt). Cookie là một tệp nhỏ được đặt trên ổ đĩa cứng của máy tính của bạn. Bạn có thể từ chối chấp nhận cookie của trình duyệt bằng cách kích hoạt cài đặt phù hợp trên trình duyệt của bạn. Tuy nhiên, nếu bạn chọn cài đặt này, bạn có thể không thể truy cập được một số phần của trang web của chúng tôi. Trừ khi bạn đã điều chỉnh cài đặt trình duyệt của mình để từ chối cookie, hệ thống của chúng tôi sẽ phát hành cookie khi bạn hướng trình duyệt của mình đến trang web của chúng tôi.</li>
+                                <li><strong>Cookie Flash.</strong> Một số tính năng của trang web của chúng tôi có thể sử dụng các đối tượng lưu trữ cục bộ (hoặc cookie Flash) để thu thập và lưu trữ thông tin về sở thích và lịch sử điều hướng của bạn đến, từ và trên trang web của chúng tôi. Cookie Flash không được quản lý bằng cách cài đặt trình duyệt giống như được sử dụng cho cookie trình duyệt. Để biết thông tin về cách quản lý cài đặt bảo mật và riêng tư của bạn cho cookie Flash, hãy xem Trình duyệt của bạn và Cài đặt riêng tư của Adobe.</li>
+                                <li><strong>Web Beacons.</strong> Các trang của trang web của chúng tôi có thể chứa các tệp điện tử nhỏ được biết đến là web beacon (cũng được gọi là clear gifs, pixel tags và single-pixel gifs) cho phép chúng tôi, ví dụ, đếm số người dùng đã ghé thăm các trang đó và cho các thống kê trang web liên quan khác (ví dụ, ghi lại sự phổ biến của một số nội dung trang web và xác minh tính toàn vẹn của hệ thống và máy chủ).</li>
                             </ul>
 
-                            <h4 class="font-weight-semibold">Disclosure of Your Information</h4>
+                            <h4 class="font-weight-semibold">Cách Chúng Tôi Sử Dụng Thông Tin Của Bạn</h4>
 
-                            <p>We may disclose aggregated information about our users, and information that does not identify any individual, without restriction.</p>
-
-                            <p>We may disclose personal information that we collect or you provide as described in this privacy policy:</p>
+                            <p>Chúng tôi sử dụng thông tin mà chúng tôi thu thập về bạn hoặc bạn cung cấp cho chúng tôi, bao gồm bất kỳ thông tin cá nhân nào:</p>
 
                             <ul>
-                                <li>To fulfill the purpose for which you provide it.</li>
-                                <li>For any other purpose disclosed by us when you provide the information.</li>
-                                <li>With your consent.</li>
+                                <li>Để hiển thị trang web của chúng tôi và nội dung của nó cho bạn.</li>
+                                <li>Để cho phép bạn tham gia các tính năng tương tác trên trang web của chúng tôi.</li>
+                                <li>Bất kỳ cách nào khác chúng tôi có thể mô tả khi bạn cung cấp thông tin.</li>
+                                <li>Cho mục đích khác với sự đồng ý của bạn.</li>
                             </ul>
 
-                            <p>We may also disclose your personal information:</p>
+                            <h4 class="font-weight-semibold">Tiết Lộ Thông Tin Của Bạn</h4>
+
+                            <p>Chúng tôi có thể tiết lộ thông tin được tập hợp về người dùng của chúng tôi và thông tin không nhận diện bất kỳ cá nhân nào, mà không có hạn chế.</p>
+
+                            <p>Chúng tôi có thể tiết lộ thông tin cá nhân mà chúng tôi thu thập hoặc bạn cung cấp như được mô tả trong chính sách bảo mật này:</p>
 
                             <ul>
-                                <li>To comply with any court order, law, or legal process, including to respond to any government or regulatory request.</li>
-                                <li>To enforce or apply our <a target="_blank" href="{{ route('terms_of_use') }}">Terms of Use</a>.</li>
-                                <li>If we believe disclosure is necessary or appropriate to protect our rights, property, or safety of our students or others.</li>
+                                <li>Để thực hiện mục đích bạn cung cấp nó.</li>
+                                <li>Cho bất kỳ mục đích khác được tiết lộ bởi chúng tôi khi bạn cung cấp thông tin đó.</li>
+                                <li>Với sự đồng ý của bạn.</li>
                             </ul>
 
-                            <h4 class="font-weight-semibold">Choices About How We Use and Disclose Your Information</h4>
-                            <p>We strive to provide you with choices regarding the personal information you provide to us. We have created mechanisms to provide you with the following control over your information:</p>
+                            <p>Chúng tôi cũng có thể tiết lộ thông tin cá nhân của bạn:</p>
 
                             <ul>
-                                <li><strong>Tracking Technologies and Advertising</strong>. You can set your browser to refuse all or some browser cookies, or to alert you when cookies are being sent. To learn how you can manage your Flash cookie settings, visit the Flash player settings page on Adobe's website. If you disable or refuse cookies, please note that some parts of this site may then be inaccessible or not function properly.</li>
+                                <li>Để tuân thủ bất kỳ lệnh tòa án, luật pháp hoặc quy trình pháp lý nào, bao gồm để đáp ứng yêu cầu của bất kỳ cơ quan chính phủ hoặc cơ quan quản lý nào.</li>
+                                <li>Để thực hiện hoặc áp dụng <a target="_blank" href="{{ route('terms_of_use') }}">Điều Khoản Sử Dụng</a> của chúng tôi.</li>
+                                <li>Nếu chúng tôi tin rằng tiết lộ là cần thiết hoặc thích hợp để bảo vệ quyền lợi, tài sản hoặc an toàn của học viên hoặc người khác.</li>
                             </ul>
 
-                            <h4 class="font-weight-semibold">Data Security</h4>
+                            <h4 class="font-weight-semibold">Lựa Chọn Về Cách Chúng Tôi Sử Dụng và Tiết Lộ Thông Tin Của Bạn</h4>
+                            <p>Chúng tôi cố gắng cung cấp cho bạn các lựa chọn về thông tin cá nhân bạn cung cấp cho chúng tôi. Chúng tôi đã tạo ra các cơ chế để cung cấp cho bạn sự kiểm soát sau đây đối với thông tin của bạn:</p>
 
-                            <p>We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure.</p>
+                            <ul>
+                                <li><strong>Công Nghệ Theo Dõi và Quảng Cáo</strong>. Bạn có thể cài đặt trình duyệt của mình để từ chối tất cả hoặc một số cookie trình duyệt, hoặc để cảnh báo bạn khi cookie được gửi đi. Để tìm hiểu cách bạn có thể quản lý cài đặt cookie Flash của mình, hãy truy cập trang cài đặt trình phát Flash trên trang web của Adobe. Nếu bạn tắt hoặc từ chối cookie, hãy lưu ý rằng một số phần của trang web này có thể không thể truy cập hoặc hoạt động không đúng cách.</li>
+                            </ul>
 
-                            <h4 class="font-weight-semibold">Changes to Our Privacy Policy</h4>
+                            <h4 class="font-weight-semibold">Bảo Mật Dữ Liệu</h4>
 
-                           <p>It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page. You are responsible for periodically visiting our Website and this privacy policy to check for any changes.</p>
+                            <p>Chúng tôi đã triển khai các biện pháp nhằm bảo vệ thông tin cá nhân của bạn khỏi mất mát không cố ý và truy cập, sử dụng, sửa đổi và tiết lộ không được ủy quyền.</p>
 
-                            <h4 class="font-weight-semibold">Contact Information</h4>
+                            <h4 class="font-weight-semibold">Thay Đổi Trong Chính Sách Bảo Mật Của Chúng Tôi</h4>
 
-                            <p>To ask questions or comment about this privacy policy and our privacy practices, please call {{ $contact_phone }}</p>
+                           <p>Chính sách của chúng tôi là đăng bất kỳ thay đổi nào chúng tôi thực hiện đối với chính sách bảo mật của chúng tôi trên trang này. Nếu chúng tôi thực hiện các thay đổi quan trọng về cách chúng tôi xử lý thông tin cá nhân của người dùng của chúng tôi, chúng tôi sẽ thông báo cho bạn thông qua thông báo trên trang chủ của trang web. Ngày chính sách bảo mật được sửa đổi lần cuối được xác định ở đầu trang. Bạn có trách nhiệm kiểm tra trang web của chúng tôi và chính sách bảo mật này định kỳ để kiểm tra các thay đổi.</p>
+
+                            <h4 class="font-weight-semibold">Thông Tin Liên Hệ</h4>
+
+                            <p>Để đặt câu hỏi hoặc bình luận về chính sách bảo mật này và các thực hành bảo mật của chúng tôi, vui lòng gọi {{ $contact_phone }}</p>
                         </div>
                     </div>
                 </div>

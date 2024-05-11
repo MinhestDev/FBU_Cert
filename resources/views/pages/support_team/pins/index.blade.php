@@ -1,17 +1,17 @@
 @extends('layouts.master')
-@section('page_title', 'Exam Pins')
+@section('page_title', 'Mã PIN Kỳ Thi')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Exam Pins</h6>
+            <h6 class="card-title">Mã PIN Kỳ Thi</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#valid-pins" class="nav-link active" data-toggle="tab">Valid Pins</a></li>
-                <li class="nav-item"><a href="#used-pins" class="nav-link" data-toggle="tab"> Used Pins</a></li>
+                <li class="nav-item"><a href="#valid-pins" class="nav-link active" data-toggle="tab">Mã PIN Hợp Lệ</a></li>
+                <li class="nav-item"><a href="#used-pins" class="nav-link" data-toggle="tab"> Mã PIN Đã Sử Dụng</a></li>
             </ul>
 
             <div class="tab-content">
@@ -22,7 +22,7 @@
                             <div class="text-center alert alert-info border-0 alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
 
-                                <span>There are <strong>{{ $pin_count }}</strong> valid pins that have not been used</span>
+                                <span>Có <strong>{{ $pin_count }}</strong> mã PIN hợp lệ chưa được sử dụng</span>
                             </div>
                         </div>
                     </div>
@@ -37,16 +37,16 @@
 
                 </div>
 
-                {{--Used Pins--}}
+                {{--Mã PIN Đã Sử Dụng--}}
                 <div class="tab-pane fade" id="used-pins">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="alert alert-info border-0 alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
 
-                                <div class="text-center">  <span>A total of <strong>{{ $used_pins->count() }}</strong> pin(s) have been used and may no longer be valid </span>
+                                <div class="text-center">  <span>Tổng cộng có <strong>{{ $used_pins->count() }}</strong> mã PIN đã được sử dụng và có thể không còn hợp lệ nữa </span>
 
-                                    <a id="used-pins" onclick="confirmDelete(this.id)" href="#" class="btn btn-danger btn-sm ml-2"><i class="icon-trash mr-1"></i> Delete ALL Used Pins</a>
+                                    <a id="used-pins" onclick="confirmDelete(this.id)" href="#" class="btn btn-danger btn-sm ml-2"><i class="icon-trash mr-1"></i> Xóa TẤT CẢ Mã PIN Đã Sử Dụng</a>
                                     <form method="post" id="item-delete-used-pins" action="{{ route('pins.destroy', 'used-pins') }}" class="hidden">@csrf @method('delete')</form>
 
                                 </div>
@@ -59,12 +59,12 @@
                             <table class="table datatable-button-html5-columns">
                                 <thead>
                                 <tr>
-                                    <th>S/N</th>
-                                    <th>Pin</th>
-                                    <th>Used By</th>
-                                    <th>User Type</th>
-                                    <th>Used For Student</th>
-                                    <th>Date Used</th>
+                                    <th>S/T</th>
+                                    <th>Mã PIN</th>
+                                    <th>Người Sử Dụng</th>
+                                    <th>Loại Người Dùng</th>
+                                    <th>Được Sử Dụng Cho Học Sinh</th>
+                                    <th>Ngày Sử Dụng</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -88,6 +88,6 @@
         </div>
     </div>
 
-    {{--Pins List Ends--}}
+    {{--Kết thúc Danh sách Mã PIN--}}
 
 @endsection

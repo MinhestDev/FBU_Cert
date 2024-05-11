@@ -54,33 +54,33 @@
                 {{--Academics--}}
                 @if(Qs::userIsAcademic())
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['tt.index', 'ttr.edit', 'ttr.show', 'ttr.manage']) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                        <a href="#" class="nav-link"><i class="icon-graduation2"></i> <span> Academics</span></a>
+                        <a href="#" class="nav-link"><i class="icon-graduation2"></i> <span> Học vấn</span></a>
 
-                        <ul class="nav nav-group-sub" data-submenu-title="Manage Academics">
+                        <ul class="nav nav-group-sub" data-submenu-title="Quản lý học vấn">
 
-                        {{--Timetables--}}
-                            <li class="nav-item"><a href="{{ route('tt.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['tt.index']) ? 'active' : '' }}">Timetables</a></li>
+                        {{--Thời khóa biểu--}}
+                            <li class="nav-item"><a href="{{ route('tt.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['tt.index']) ? 'active' : '' }}">Thời khóa biểu</a></li>
                         </ul>
                     </li>
-                    @endif
+                @endif
 
                 {{--Administrative--}}
                 @if(Qs::userIsAdministrative())
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.show',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                        <a href="#" class="nav-link"><i class="icon-office"></i> <span> Administrative</span></a>
+                        <a href="#" class="nav-link"><i class="icon-office"></i> <span> Hành chính</span></a>
 
-                        <ul class="nav nav-group-sub" data-submenu-title="Administrative">
+                        <ul class="nav nav-group-sub" data-submenu-title="Hành chính">
 
-                            {{--Payments--}}
+                            {{--Thanh toán--}}
                             @if(Qs::userIsTeamAccount())
                             <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.edit', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'nav-item-expanded' : '' }}">
 
-                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Payments</a>
+                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Thanh toán</a>
 
                                 <ul class="nav nav-group-sub">
-                                    <li class="nav-item"><a href="{{ route('payments.create') }}" class="nav-link {{ Route::is('payments.create') ? 'active' : '' }}">Create Payment</a></li>
-                                    <li class="nav-item"><a href="{{ route('payments.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.show']) ? 'active' : '' }}">Manage Payments</a></li>
-                                    <li class="nav-item"><a href="{{ route('payments.manage') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.manage', 'payments.invoice', 'payments.receipts']) ? 'active' : '' }}">Student Payments</a></li>
+                                    <li class="nav-item"><a href="{{ route('payments.create') }}" class="nav-link {{ Route::is('payments.create') ? 'active' : '' }}">Tạo thanh toán</a></li>
+                                    <li class="nav-item"><a href="{{ route('payments.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.show']) ? 'active' : '' }}">Quản lý thanh toán</a></li>
+                                    <li class="nav-item"><a href="{{ route('payments.manage') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.manage', 'payments.invoice', 'payments.receipts']) ? 'active' : '' }}">Thanh toán sinh viên</a></li>
 
                                 </ul>
 
@@ -90,23 +90,23 @@
                     </li>
                 @endif
 
-                {{--Manage Students--}}
+                {{--Quản lý sinh viên--}}
                 @if(Qs::userIsTeamSAT())
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['students.create', 'students.list', 'students.edit', 'students.show', 'students.promotion', 'students.promotion_manage', 'students.graduated']) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                        <a href="#" class="nav-link"><i class="icon-users"></i> <span> Students</span></a>
+                        <a href="#" class="nav-link"><i class="icon-users"></i> <span> Sinh viên</span></a>
 
-                        <ul class="nav nav-group-sub" data-submenu-title="Manage Students">
-                            {{--Admit Student--}}
+                        <ul class="nav nav-group-sub" data-submenu-title="Quản lý sinh viên">
+                            {{--Nhập học sinh--}}
                             @if(Qs::userIsTeamSA())
                                 <li class="nav-item">
                                     <a href="{{ route('students.create') }}"
-                                       class="nav-link {{ (Route::is('students.create')) ? 'active' : '' }}">Admit Student</a>
+                                       class="nav-link {{ (Route::is('students.create')) ? 'active' : '' }}">Nhập học sinh</a>
                                 </li>
                             @endif
 
-                            {{--Student Information--}}
+                            {{--Thông tin sinh viên--}}
                             <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['students.list', 'students.edit', 'students.show']) ? 'nav-item-expanded' : '' }}">
-                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['students.list', 'students.edit', 'students.show']) ? 'active' : '' }}">Student Information</a>
+                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['students.list', 'students.edit', 'students.show']) ? 'active' : '' }}">Thông tin sinh viên</a>
                                 <ul class="nav nav-group-sub">
                                     @foreach(App\Models\MyClass::orderBy('name')->get() as $c)
                                         <li class="nav-item"><a href="{{ route('students.list', $c->id) }}" class="nav-link ">{{ $c->name }}</a></li>
@@ -116,17 +116,17 @@
 
                             @if(Qs::userIsTeamSA())
 
-                            {{--Student Promotion--}}
-                            <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['students.promotion', 'students.promotion_manage']) ? 'nav-item-expanded' : '' }}"><a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['students.promotion', 'students.promotion_manage' ]) ? 'active' : '' }}">Student Promotion</a>
+                            {{--Thăng cấp sinh viên--}}
+                            <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['students.promotion', 'students.promotion_manage']) ? 'nav-item-expanded' : '' }}"><a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['students.promotion', 'students.promotion_manage' ]) ? 'active' : '' }}">Thăng cấp sinh viên</a>
                             <ul class="nav nav-group-sub">
-                                <li class="nav-item"><a href="{{ route('students.promotion') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.promotion']) ? 'active' : '' }}">Promote Students</a></li>
-                                <li class="nav-item"><a href="{{ route('students.promotion_manage') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.promotion_manage']) ? 'active' : '' }}">Manage Promotions</a></li>
+                                <li class="nav-item"><a href="{{ route('students.promotion') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.promotion']) ? 'active' : '' }}">Thăng cấp sinh viên</a></li>
+                                <li class="nav-item"><a href="{{ route('students.promotion_manage') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.promotion_manage']) ? 'active' : '' }}">Quản lý thăng cấp</a></li>
                             </ul>
 
                             </li>
 
-                            {{--Student Graduated--}}
-                            <li class="nav-item"><a href="{{ route('students.graduated') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.graduated' ]) ? 'active' : '' }}">Students Graduated</a></li>
+                            {{--Sinh viên tốt nghiệp--}}
+                            <li class="nav-item"><a href="{{ route('students.graduated') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.graduated' ]) ? 'active' : '' }}">Sinh viên tốt nghiệp</a></li>
                                 @endif
 
                         </ul>
@@ -134,73 +134,73 @@
                 @endif
 
                 @if(Qs::userIsTeamSA())
-                    {{--Manage Users--}}
+                    {{--Quản lý người dùng--}}
                     <li class="nav-item">
-                        <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Users</span></a>
+                        <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Người dùng</span></a>
                     </li>
 
-                    {{--Manage Classes--}}
+                    {{--Quản lý lớp học--}}
                     <li class="nav-item">
-                        <a href="{{ route('classes.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['classes.index','classes.edit']) ? 'active' : '' }}"><i class="icon-windows2"></i> <span> Classes</span></a>
+                        <a href="{{ route('classes.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['classes.index','classes.edit']) ? 'active' : '' }}"><i class="icon-windows2"></i> <span> Lớp học</span></a>
                     </li>
 
-                    {{--Manage Dorms--}}
+                    {{--Quản lý ký túc xá--}}
                     <li class="nav-item">
-                        <a href="{{ route('dorms.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['dorms.index','dorms.edit']) ? 'active' : '' }}"><i class="icon-home9"></i> <span> Dormitories</span></a>
+                        <a href="{{ route('dorms.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['dorms.index','dorms.edit']) ? 'active' : '' }}"><i class="icon-home9"></i> <span> Ký túc xá</span></a>
                     </li>
 
-                    {{--Manage Sections--}}
+                    {{--Quản lý phần--}}
                     <li class="nav-item">
-                        <a href="{{ route('sections.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['sections.index','sections.edit',]) ? 'active' : '' }}"><i class="icon-fence"></i> <span>Sections</span></a>
+                        <a href="{{ route('sections.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['sections.index','sections.edit',]) ? 'active' : '' }}"><i class="icon-fence"></i> <span>Phần</span></a>
                     </li>
 
-                    {{--Manage Subjects--}}
+                    {{--Quản lý môn học--}}
                     <li class="nav-item">
-                        <a href="{{ route('subjects.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['subjects.index','subjects.edit',]) ? 'active' : '' }}"><i class="icon-pin"></i> <span>Subjects</span></a>
+                        <a href="{{ route('subjects.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['subjects.index','subjects.edit',]) ? 'active' : '' }}"><i class="icon-pin"></i> <span>Môn học</span></a>
                     </li>
                 @endif
 
-                {{--Exam--}}
+                {{--Kiểm tra--}}
                 @if(Qs::userIsTeamSAT())
                 <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['exams.index', 'exams.edit', 'grades.index', 'grades.edit', 'marks.index', 'marks.manage', 'marks.bulk', 'marks.tabulation', 'marks.show', 'marks.batch_fix',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                    <a href="#" class="nav-link"><i class="icon-books"></i> <span> Exams</span></a>
+                    <a href="#" class="nav-link"><i class="icon-books"></i> <span> Cấp văn bằng chứng chỉ</span></a>
 
-                    <ul class="nav nav-group-sub" data-submenu-title="Manage Exams">
+                    <ul class="nav nav-group-sub" data-submenu-title="Quản lý kiểm tra">
                         @if(Qs::userIsTeamSA())
 
-                        {{--Exam list--}}
+                        {{--Danh sách kỳ thi--}}
                             <li class="nav-item">
                                 <a href="{{ route('exams.index') }}"
-                                   class="nav-link {{ (Route::is('exams.index')) ? 'active' : '' }}">Exam List</a>
+                                   class="nav-link {{ (Route::is('exams.index')) ? 'active' : '' }}">Danh sách kỳ thi</a>
                             </li>
 
-                            {{--Grades list--}}
+                            {{--Danh sách điểm--}}
                             <li class="nav-item">
                                     <a href="{{ route('grades.index') }}"
-                                       class="nav-link {{ in_array(Route::currentRouteName(), ['grades.index', 'grades.edit']) ? 'active' : '' }}">Grades</a>
+                                       class="nav-link {{ in_array(Route::currentRouteName(), ['grades.index', 'grades.edit']) ? 'active' : '' }}">Điểm</a>
                             </li>
 
-                            {{--Tabulation Sheet--}}
+                            {{--Bảng điểm--}}
                             <li class="nav-item">
-                                <a href="{{ route('marks.tabulation') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.tabulation']) ? 'active' : '' }}">Tabulation Sheet</a>
+                                <a href="{{ route('marks.tabulation') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.tabulation']) ? 'active' : '' }}">Bảng điểm</a>
                             </li>
 
-                            {{--Marks Batch Fix--}}
+                            {{--Sửa lỗi batch điểm--}}
                             <li class="nav-item">
-                                <a href="{{ route('marks.batch_fix') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.batch_fix']) ? 'active' : '' }}">Batch Fix</a>
+                                <a href="{{ route('marks.batch_fix') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.batch_fix']) ? 'active' : '' }}">Sửa lỗi batch</a>
                             </li>
                         @endif
 
                         @if(Qs::userIsTeamSAT())
-                            {{--Marks Manage--}}
+                            {{--Quản lý điểm--}}
                             <li class="nav-item">
                                 <a href="{{ route('marks.index') }}"
-                                   class="nav-link {{ in_array(Route::currentRouteName(), ['marks.index']) ? 'active' : '' }}">Marks</a>
+                                   class="nav-link {{ in_array(Route::currentRouteName(), ['marks.index']) ? 'active' : '' }}">Điểm</a>
                             </li>
 
-                            {{--Marksheet--}}
+                            {{--Bảng điểm--}}
                             <li class="nav-item">
-                                <a href="{{ route('marks.bulk') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.bulk', 'marks.show']) ? 'active' : '' }}">Marksheet</a>
+                                <a href="{{ route('marks.bulk') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.bulk', 'marks.show']) ? 'active' : '' }}">Bảng điểm</a>
                             </li>
 
                             @endif
@@ -210,13 +210,13 @@
                 @endif
 
 
-                {{--End Exam--}}
+                {{--Kết thúc kiểm tra--}}
 
                 @include('pages.'.Qs::getUserType().'.menu')
 
-                {{--Manage Account--}}
+                {{--Quản lý tài khoản--}}
                 <li class="nav-item">
-                    <a href="{{ route('my_account') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['my_account']) ? 'active' : '' }}"><i class="icon-user"></i> <span>My Account</span></a>
+                    <a href="{{ route('my_account') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['my_account']) ? 'active' : '' }}"><i class="icon-user"></i> <span>Tài khoản của tôi</span></a>
                 </li>
 
                 </ul>

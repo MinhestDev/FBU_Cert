@@ -1,4 +1,4 @@
-<!-- Main navbar -->
+<!-- Thanh điều hướng chính -->
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="mt-2 mr-5">
         <a href="{{ route('dashboard') }}" class="d-inline-block">
@@ -19,24 +19,24 @@
             <li class="nav-item dropdown">
                 <a href="{{ route('home') }}" class="navbar-nav-link">
                     <i class="icon-home"></i>
-                    <span class="d-md-none ml-2">Home</span>
+                    <span class="d-md-none ml-2">Trang chủ</span>
                 </a>
             </li>
 
             <li class="nav-item dropdown">
                 <a href="{{ route('login') }}" class="navbar-nav-link">
                     <i class="icon-user-tie"></i>
-                    <span class="d-md-none ml-2">My Account</span>
+                    <span class="d-md-none ml-2">Tài khoản của tôi</span>
                 </a>
             </li>
 
             <li class="nav-item dropdown">
                 <a href="#" class="navbar-nav-link">
                     <i class="icon-cog3"></i>
-                    <span class="d-md-none ml-2">Options</span>
+                    <span class="d-md-none ml-2">Tùy chọn</span>
                 </a>
             </li>
         </ul>
     </div>
 </div>
-<!-- /main navbar -->
+<!-- /thanh điều hướng chính -->

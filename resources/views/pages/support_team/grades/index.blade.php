@@ -1,17 +1,17 @@
 @extends('layouts.master')
-@section('page_title', 'Manage Grades')
+@section('page_title', 'Quản lý Điểm số')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Manage Grades</h6>
+            <h6 class="card-title">Quản lý Điểm số</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#all-grades" class="nav-link active" data-toggle="tab">Manage Grades</a></li>
-                <li class="nav-item"><a href="#new-grade" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Add Grade</a></li>
+                <li class="nav-item"><a href="#all-grades" class="nav-link active" data-toggle="tab">Quản lý Điểm số</a></li>
+                <li class="nav-item"><a href="#new-grade" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Thêm Điểm số</a></li>
             </ul>
 
             <div class="tab-content">
@@ -20,11 +20,11 @@
                             <thead>
                             <tr>
                                 <th>S/N</th>
-                                <th>Name</th>
-                                <th>Grade Type</th>
-                                <th>Range</th>
-                                <th>Remark</th>
-                                <th>Action</th>
+                                <th>Tên</th>
+                                <th>Loại Điểm</th>
+                                <th>Phạm vi</th>
+                                <th>Ghi chú</th>
+                                <th>Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -44,12 +44,12 @@
 
                                                 <div class="dropdown-menu dropdown-menu-left">
                                                     @if(Qs::userIsTeamSA())
-                                                    {{--Edit--}}
-                                                    <a href="{{ route('grades.edit', $gr->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
+                                                    {{--Chỉnh sửa--}}
+                                                    <a href="{{ route('grades.edit', $gr->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Chỉnh sửa</a>
                                                    @endif
                                                     @if(Qs::userIsSuperAdmin())
-                                                    {{--Delete--}}
-                                                    <a id="{{ $gr->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Delete</a>
+                                                    {{--Xóa--}}
+                                                    <a id="{{ $gr->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Xóa</a>
                                                     <form method="post" id="item-delete-{{ $gr->id }}" action="{{ route('grades.destroy', $gr->id) }}" class="hidden">@csrf @method('delete')</form>
                                                         @endif
 
@@ -69,7 +69,7 @@
                             <div class="alert alert-info border-0 alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
 
-                                <span>If The grade you are creating applies to all class types select <strong>NOT APPLICABLE.</strong> Otherwise select the Class Type That the grade applies to</span>
+                                <span>Nếu điểm số bạn đang tạo áp dụng cho tất cả các loại lớp học, hãy chọn <strong>Không áp dụng.</strong> Nếu không, hãy chọn Loại Lớp học mà điểm số áp dụng cho đó.</span>
                             </div>
                         </div>
                     </div>
@@ -78,17 +78,17 @@
                             <form method="post" action="{{ route('grades.store') }}">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">Name <span class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">Tên <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
-                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control text-uppercase" placeholder="E.g. A1">
+                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control text-uppercase" placeholder="Ví dụ: A1">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="class_type_id" class="col-lg-3 col-form-label font-weight-semibold">Grade Type</label>
+                                    <label for="class_type_id" class="col-lg-3 col-form-label font-weight-semibold">Loại Điểm</label>
                                     <div class="col-lg-9">
                                         <select class="form-control select" name="class_type_id" id="class_type_id">
-                                            <option value="">Not Applicable</option>
+                                            <option value="">Không áp dụng</option>
                                          @foreach($class_types as $ct)
                                                 <option {{ old('class_type_id') == $ct->id ? 'selected' : '' }} value="{{ $ct->id }}">{{ $ct->name }}</option>
                                              @endforeach
@@ -97,24 +97,24 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">Mark From <span class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">Điểm Từ <span class="text-danger">*</span></label>
                                     <div class="col-lg-3">
                                         <input min="0" max="100" name="mark_from" value="{{ old('mark_from') }}" required type="number" class="form-control" placeholder="0">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">Mark To <span class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">Điểm Đến <span class="text-danger">*</span></label>
                                     <div class="col-lg-3">
                                         <input min="0" max="100" name="mark_to" value="{{ old('mark_to') }}" required type="number" class="form-control" placeholder="0">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="remark" class="col-lg-3 col-form-label font-weight-semibold">Remark</label>
+                                    <label for="remark" class="col-lg-3 col-form-label font-weight-semibold">Ghi chú</label>
                                     <div class="col-lg-9">
                                         <select class="form-control select" name="remark" id="remark">
-                                            <option value="">Select Remark...</option>
+                                            <option value="">Chọn ghi chú...</option>
                                             @foreach(Mk::getRemarks() as $rem)
                                                 <option {{ old('remark') == $rem ? 'selected' : '' }} value="{{ $rem }}">{{ $rem }}</option>
                                             @endforeach
@@ -123,7 +123,7 @@
                                 </div>
 
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Submit form <i class="icon-paperplane ml-2"></i></button>
+                                    <button type="submit" class="btn btn-primary">Gửi biểu mẫu <i class="icon-paperplane ml-2"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -133,6 +133,6 @@
         </div>
     </div>
 
-    {{--Class List Ends--}}
+    {{--Kết thúc Danh sách Lớp học--}}
 
 @endsection

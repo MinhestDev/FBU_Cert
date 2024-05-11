@@ -1,17 +1,17 @@
 @extends('layouts.master')
-@section('page_title', 'Manage Classes')
+@section('page_title', 'Quản lý Lớp học')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Manage Classes</h6>
+            <h6 class="card-title">Quản lý Lớp học</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#all-classes" class="nav-link active" data-toggle="tab">Manage Classes</a></li>
-                <li class="nav-item"><a href="#new-class" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Create New Class</a></li>
+                <li class="nav-item"><a href="#all-classes" class="nav-link active" data-toggle="tab">Quản lý Lớp học</a></li>
+                <li class="nav-item"><a href="#new-class" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Tạo Lớp mới</a></li>
             </ul>
 
             <div class="tab-content">
@@ -19,10 +19,10 @@
                         <table class="table datatable-button-html5-columns">
                             <thead>
                             <tr>
-                                <th>S/N</th>
-                                <th>Name</th>
-                                <th>Class Type</th>
-                                <th>Action</th>
+                                <th>S/T</th>
+                                <th>Tên</th>
+                                <th>Loại Lớp</th>
+                                <th>Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,12 +40,12 @@
 
                                                 <div class="dropdown-menu dropdown-menu-left">
                                                     @if(Qs::userIsTeamSA())
-                                                    {{--Edit--}}
-                                                    <a href="{{ route('classes.edit', $c->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
+                                                    {{--Chỉnh sửa--}}
+                                                    <a href="{{ route('classes.edit', $c->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Chỉnh sửa</a>
                                                    @endif
                                                         @if(Qs::userIsSuperAdmin())
-                                                    {{--Delete--}}
-                                                    <a id="{{ $c->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Delete</a>
+                                                    {{--Xóa--}}
+                                                    <a id="{{ $c->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Xóa</a>
                                                     <form method="post" id="item-delete-{{ $c->id }}" action="{{ route('classes.destroy', $c->id) }}" class="hidden">@csrf @method('delete')</form>
                                                         @endif
 
@@ -65,7 +65,7 @@
                             <div class="alert alert-info border-0 alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
 
-                                <span>When a class is created, a Section will be automatically created for the class, you can edit it or add more sections to the class at <a target="_blank" href="{{ route('sections.index') }}">Manage Sections</a></span>
+                                <span>Khi một lớp học được tạo, một Phần sẽ tự động được tạo ra cho lớp học đó, bạn có thể chỉnh sửa nó hoặc thêm nhiều phần cho lớp học tại <a target="_blank" href="{{ route('sections.index') }}">Quản lý Phần</a></span>
                             </div>
                         </div>
                     </div>
@@ -75,16 +75,16 @@
                             <form class="ajax-store" method="post" action="{{ route('classes.store') }}">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">Name <span class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">Tên <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
-                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Name of Class">
+                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Tên của Lớp">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="class_type_id" class="col-lg-3 col-form-label font-weight-semibold">Class Type</label>
+                                    <label for="class_type_id" class="col-lg-3 col-form-label font-weight-semibold">Loại Lớp</label>
                                     <div class="col-lg-9">
-                                        <select required data-placeholder="Select Class Type" class="form-control select" name="class_type_id" id="class_type_id">
+                                        <select required data-placeholder="Chọn Loại Lớp" class="form-control select" name="class_type_id" id="class_type_id">
                                             @foreach($class_types as $ct)
                                                 <option {{ old('class_type_id') == $ct->id ? 'selected' : '' }} value="{{ $ct->id }}">{{ $ct->name }}</option>
                                             @endforeach
@@ -93,7 +93,7 @@
                                 </div>
 
                                 <div class="text-right">
-                                    <button id="ajax-btn" type="submit" class="btn btn-primary">Submit form <i class="icon-paperplane ml-2"></i></button>
+                                    <button id="ajax-btn" type="submit" class="btn btn-primary">Gửi biểu mẫu <i class="icon-paperplane ml-2"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -103,6 +103,6 @@
         </div>
     </div>
 
-    {{--Class List Ends--}}
+    {{--Danh sách Lớp học Kết thúc--}}
 
 @endsection

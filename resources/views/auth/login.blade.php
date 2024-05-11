@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <!-- Content area -->
         <div class="content d-flex justify-content-center align-items-center">
-            <!-- Login card -->
+            <!-- Form đăng nhập -->
             <form class="login-form card mr-4" method="post" action="{{ route('login') }}" style="width: 45%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 20px; background-color: #f9f9f9;">
                 @csrf
                 <div class="card-body">
@@ -22,10 +22,10 @@
                     </div>
                     @endif
                     <div class="form-group ">
-                        <input type="text" class="form-control" name="identity" value="{{ old('identity') }}" placeholder="Login ID or Email" style="border-radius: 5px; border: 1px solid #ccc;">
+                        <input type="text" class="form-control" name="identity" value="{{ old('identity') }}" placeholder="Tên đăng nhập hoặc Email" style="border-radius: 5px; border: 1px solid #ccc;">
                     </div>
                     <div class="form-group ">
-                        <input required name="password" type="password" class="form-control" placeholder="{{ __('Password') }}" style="border-radius: 5px; border: 1px solid #ccc;">
+                        <input required name="password" type="password" class="form-control" placeholder="{{ __('Mật khẩu') }}" style="border-radius: 5px; border: 1px solid #ccc;">
                     </div>
                     <div class="form-group d-flex align-items-center">
                         <div class="form-check mb-0">
@@ -42,7 +42,7 @@
                 </div>
             </form>
 
-            <!-- Form for certificate lookup -->
+            <!-- Form tìm kiếm chứng chỉ -->
             <div class="search-form card" style="width: 45%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 20px; background-color: #f9f9f9;">
                 <div class="card-body">
                     <img src="./global_assets/images/searching.png" style="width:20%; margin-left: 230px" alt="">
@@ -70,4 +70,4 @@
     </div>
 </div>
 
-    @endsection
+@endsection

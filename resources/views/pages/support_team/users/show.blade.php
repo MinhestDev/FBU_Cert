@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('page_title', 'User Profile - '.$user->name)
+@section('page_title', 'Hồ sơ người dùng - '.$user->name)
 @section('content')
     <div class="row">
         <div class="col-md-3 text-center">
@@ -21,20 +21,20 @@
                     </ul>
 
                     <div class="tab-content">
-                        {{--Basic Info--}}
+                        {{--Thông tin cơ bản--}}
                         <div class="tab-pane fade show active" id="basic-info">
                             <table class="table table-bordered">
                                 <tbody>
                                 <tr>
-                                    <td class="font-weight-bold">Name</td>
+                                    <td class="font-weight-bold">Tên</td>
                                     <td>{{ $user->name }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="font-weight-bold">Gender</td>
+                                    <td class="font-weight-bold">Giới tính</td>
                                     <td>{{ $user->gender }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="font-weight-bold">Address</td>
+                                    <td class="font-weight-bold">Địa chỉ</td>
                                     <td>{{ $user->address }}</td>
                                 </tr>
                                 @if($user->email)
@@ -45,47 +45,47 @@
                                 @endif
                                 @if($user->username)
                                     <tr>
-                                        <td class="font-weight-bold">Username</td>
+                                        <td class="font-weight-bold">Tên người dùng</td>
                                         <td>{{$user->username }}</td>
                                     </tr>
                                 @endif
                                 @if($user->phone)
                                     <tr>
-                                        <td class="font-weight-bold">Phone</td>
+                                        <td class="font-weight-bold">Điện thoại</td>
                                         <td>{{$user->phone.' '.$user->phone2 }}</td>
                                     </tr>
                                 @endif
                                 <tr>
-                                    <td class="font-weight-bold">Birthday</td>
+                                    <td class="font-weight-bold">Ngày sinh</td>
                                     <td>{{$user->dob }}</td>
                                 </tr>
                                 @if($user->bg_id)
                                     <tr>
-                                        <td class="font-weight-bold">Blood Group</td>
+                                        <td class="font-weight-bold">Nhóm máu</td>
                                         <td>{{$user->blood_group->name }}</td>
                                     </tr>
                                 @endif
                                 @if($user->nal_id)
                                     <tr>
-                                        <td class="font-weight-bold">Nationality</td>
+                                        <td class="font-weight-bold">Quốc tịch</td>
                                         <td>{{$user->nationality->name }}</td>
                                     </tr>
                                 @endif
                                 @if($user->state_id)
                                     <tr>
-                                        <td class="font-weight-bold">State</td>
+                                        <td class="font-weight-bold">Tỉnh/Thành phố</td>
                                         <td>{{$user->state->name }}</td>
                                     </tr>
                                 @endif
                                 @if($user->lga_id)
                                     <tr>
-                                        <td class="font-weight-bold">LGA</td>
+                                        <td class="font-weight-bold">Quận/Huyện</td>
                                         <td>{{$user->lga->name }}</td>
                                     </tr>
                                 @endif
                                 @if($user->user_type == 'parent')
                                     <tr>
-                                        <td class="font-weight-bold">Children/Ward</td>
+                                        <td class="font-weight-bold">Con/Cháu</td>
                                         <td>
                                         @foreach(Qs::findMyChildren($user->id) as $sr)
                                             <span> - <a href="{{ route('students.show', Qs::hash($sr->id)) }}">{{ $sr->user->name.' - '.$sr->my_class->name. ' '.$sr->section->name }}</a></span><br>
@@ -97,7 +97,7 @@
 
                                 @if($user->user_type == 'teacher')
                                     <tr>
-                                        <td class="font-weight-bold">My Subjects</td>
+                                        <td class="font-weight-bold">Môn học của tôi</td>
                                         <td>
                                             @foreach(Qs::findTeacherSubjects($user->id) as $sub)
                                                 <span> - {{ $sub->name.' ('.$sub->my_class->name.')' }}</span><br>
@@ -117,6 +117,6 @@
     </div>
 
 
-    {{--User Profile Ends--}}
+    {{--Kết thúc Hồ sơ người dùng--}}
 
 @endsection

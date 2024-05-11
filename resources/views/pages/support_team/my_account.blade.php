@@ -1,18 +1,18 @@
 @extends('layouts.master')
-@section('page_title', 'My Account')
+@section('page_title', 'Tài khoản của tôi')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">My Account</h6>
+            <h6 class="card-title">Tài khoản của tôi</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#change-pass" class="nav-link active" data-toggle="tab">Change Password</a></li>
+                <li class="nav-item"><a href="#change-pass" class="nav-link active" data-toggle="tab">Đổi mật khẩu</a></li>
                 @if(Qs::userIsPTA())
-                    <li class="nav-item"><a href="#edit-profile" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Manage Profile</a></li>
+                    <li class="nav-item"><a href="#edit-profile" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Quản lý Hồ sơ</a></li>
                 @endif
             </ul>
 
@@ -24,28 +24,28 @@
                                 @csrf @method('put')
 
                                 <div class="form-group row">
-                                    <label for="current_password" class="col-lg-3 col-form-label font-weight-semibold">Current Password <span class="text-danger">*</span></label>
+                                    <label for="current_password" class="col-lg-3 col-form-label font-weight-semibold">Mật khẩu hiện tại <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
                                         <input id="current_password" name="current_password"  required type="password" class="form-control" >
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-lg-3 col-form-label font-weight-semibold">New Password <span class="text-danger">*</span></label>
+                                    <label for="password" class="col-lg-3 col-form-label font-weight-semibold">Mật khẩu mới <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
                                         <input id="password" name="password"  required type="password" class="form-control" >
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password_confirmation" class="col-lg-3 col-form-label font-weight-semibold">Confirm Password <span class="text-danger">*</span></label>
+                                    <label for="password_confirmation" class="col-lg-3 col-form-label font-weight-semibold">Xác nhận mật khẩu <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
                                         <input id="password_confirmation" name="password_confirmation"  required type="password" class="form-control" >
                                     </div>
                                 </div>
 
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-danger">Submit form <i class="icon-paperplane ml-2"></i></button>
+                                    <button type="submit" class="btn btn-danger">Gửi form <i class="icon-paperplane ml-2"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -59,7 +59,7 @@
                                     @csrf @method('put')
 
                                     <div class="form-group row">
-                                        <label for="name" class="col-lg-3 col-form-label font-weight-semibold">Name</label>
+                                        <label for="name" class="col-lg-3 col-form-label font-weight-semibold">Tên</label>
                                         <div class="col-lg-9">
                                             <input disabled="disabled" id="name" class="form-control" type="text" value="{{ $my->name }}">
                                         </div>
@@ -67,7 +67,7 @@
 
                                     @if($my->username)
                                         <div class="form-group row">
-                                            <label for="username" class="col-lg-3 col-form-label font-weight-semibold">Username</label>
+                                            <label for="username" class="col-lg-3 col-form-label font-weight-semibold">Tên đăng nhập</label>
                                             <div class="col-lg-9">
                                                 <input disabled="disabled" id="username" class="form-control" type="text" value="{{ $my->username }}">
                                             </div>
@@ -76,7 +76,7 @@
                                     @else
 
                                         <div class="form-group row">
-                                            <label for="username" class="col-lg-3 col-form-label font-weight-semibold">Username </label>
+                                            <label for="username" class="col-lg-3 col-form-label font-weight-semibold">Tên đăng nhập </label>
                                             <div class="col-lg-9">
                                                 <input id="username" name="username"  type="text" class="form-control" >
                                             </div>
@@ -91,35 +91,35 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="phone" class="col-lg-3 col-form-label font-weight-semibold">Phone </label>
+                                        <label for="phone" class="col-lg-3 col-form-label font-weight-semibold">Số điện thoại </label>
                                         <div class="col-lg-9">
                                             <input id="phone" value="{{ $my->phone }}" name="phone"  type="text" class="form-control" >
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="phone2" class="col-lg-3 col-form-label font-weight-semibold">Telephone </label>
+                                        <label for="phone2" class="col-lg-3 col-form-label font-weight-semibold">Số điện thoại 2 </label>
                                         <div class="col-lg-9">
                                             <input id="phone2" value="{{ $my->phone2 }}" name="phone2"  type="text" class="form-control" >
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="address" class="col-lg-3 col-form-label font-weight-semibold">Address </label>
+                                        <label for="address" class="col-lg-3 col-form-label font-weight-semibold">Địa chỉ </label>
                                         <div class="col-lg-9">
                                             <input id="address" value="{{ $my->address }}" name="address"  type="text"  class="form-control" >
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="address" class="col-lg-3 col-form-label font-weight-semibold">Change Photo </label>
+                                        <label for="address" class="col-lg-3 col-form-label font-weight-semibold">Thay đổi ảnh đại diện </label>
                                         <div class="col-lg-9">
                                             <input  accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
                                         </div>
                                     </div>
 
                                     <div class="text-right">
-                                        <button type="submit" class="btn btn-danger">Submit form <i class="icon-paperplane ml-2"></i></button>
+                                        <button type="submit" class="btn btn-danger">Gửi form <i class="icon-paperplane ml-2"></i></button>
                                     </div>
                                 </form>
                             </div>
@@ -130,6 +130,6 @@
         </div>
     </div>
 
-    {{--My Profile Ends--}}
+    {{--Kết thúc Hồ sơ của tôi--}}
 
 @endsection
