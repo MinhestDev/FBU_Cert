@@ -2,7 +2,9 @@
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="mt-2 mr-5">
         <a href="{{ route('dashboard') }}" class="d-inline-block">
-            <h4 class="text-bold text-white">{{ Qs::getSystemName() }}</h4>
+            <h4 class="text-bold text-white">
+                <img src="./global_assets/images/logo_fbu.png" style="width: 10%" alt=""> |
+                {{ Qs::getSystemName() }}</h4>
         </a>
     </div>
 
