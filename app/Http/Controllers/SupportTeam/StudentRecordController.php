@@ -110,7 +110,28 @@ class StudentRecordController extends Controller
 
         return back()->with('flash_success', __('msg.update_ok'));
     }
+    public function search_graduated(Request $request)
+    {
+        $data['my_classes'] = $this->my_class->all();
 
+        $search = $request->input('searchTerm');
+        $query = $this->student->query();
+
+        if (!empty($search)) {
+            $query->whereHas('user', function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%');
+            })
+                ->orWhere('my_class', function ($query) use ($search) {
+                    $query->where('name', 'LIKE', '%' . $search . '%');
+                })
+                ->orWhere('grad_date', 'LIKE', '%' . $search . '%')
+                ->orWhere('adm_no', 'LIKE', '%' . $search . '%');
+        }
+
+        $data['students'] = $query->get();
+
+        return view('pages.support_team.students.graduated', $data);
+    }
     public function show($sr_id)
     {
         $sr_id = Qs::decodeHash($sr_id);
@@ -180,29 +201,6 @@ class StudentRecordController extends Controller
         $this->user->delete($sr->user->id);
 
         return back()->with('flash_success', __('msg.del_ok'));
-    }
-
-    public function search_graduated(Request $request)
-    {
-        $data['my_classes'] = $this->my_class->all();
-
-        $search = $request->input('searchTerm');
-        $query = $this->student->query();
-
-        if (!empty($search)) {
-            $query->whereHas('user', function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%' . $search . '%');
-            })
-                ->orWhere('my_class', function ($query) use ($search) {
-                    $query->where('name', 'LIKE', '%' . $search . '%');
-                })
-                ->orWhere('grad_date', 'LIKE', '%' . $search . '%')
-                ->orWhere('adm_no', 'LIKE', '%' . $search . '%');
-        }
-
-        $data['students'] = $query->get();
-
-        return view('pages.support_team.students.graduated', $data);
     }
 
 }

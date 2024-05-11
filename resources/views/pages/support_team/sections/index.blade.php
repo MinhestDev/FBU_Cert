@@ -4,15 +4,15 @@
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Quản lý Các Khối Lớp</h6>
+            <h6 class="card-title">Quản lý Ngành</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#new-section" class="nav-link active" data-toggle="tab">Tạo Khối Lớp Mới</a></li>
+                <li class="nav-item"><a href="#new-section" class="nav-link active" data-toggle="tab">Tạo Ngành Mới</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Quản lý Khối Lớp</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Quản lý Ngành</a>
                     <div class="dropdown-menu dropdown-menu-right">
                         @foreach($my_classes as $c)
                             <a href="#c{{ $c->id }}" class="dropdown-item" data-toggle="tab">{{ $c->name }}</a>
@@ -30,7 +30,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">Tên <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
-                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Tên Khối Lớp">
+                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Tên Ngành">
                                     </div>
                                 </div>
 
@@ -72,7 +72,7 @@
                                 <th>Số thứ tự</th>
                                 <th>Tên</th>
                                 <th>Lớp</th>
-                                <th>Giáo viên</th>
+                                {{-- <th>Giáo viên</th> --}}
                                 <th>Hành động</th>
                             </tr>
                             </thead>
@@ -83,11 +83,11 @@
                                     <td>{{ $s->name }} @if($s->active)<i class='icon-check'> </i>@endif</td>
                                     <td>{{ $s->my_class->name }}</td>
 
-                                    @if($s->teacher_id)
+                                    {{-- @if($s->teacher_id)
                                     <td><a target="_blank" href="{{ route('users.show', Qs::hash($s->teacher_id)) }}">{{ $s->teacher->name }}</a></td>
                                         @else
                                         <td> - </td>
-                                    @endif
+                                    @endif --}}
 
                                     <td class="text-center">
                                         <div class="list-icons">

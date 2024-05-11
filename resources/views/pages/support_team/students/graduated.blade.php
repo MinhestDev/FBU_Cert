@@ -20,7 +20,15 @@
                 </div>
             </li>
         </ul>
-
+        <form action="{{ route('students.search') }}" method="GET">
+            <div class="input-group mb-3" style="width: 300px">
+                <input type="text" name="searchTerm" class="form-control" placeholder="Nhập từ khóa cần tìm"
+                    aria-label="Tìm kiếm">
+                <button type="submit" class="px-3 btn btn-primary">
+                    Tìm kiếm
+                </button>
+            </div>
+        </form>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="all-students">
                 <table class="table datatable-button-html5-columns">

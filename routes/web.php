@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('graduated', 'StudentRecordController@graduated')->name('students.graduated');
             Route::put('not_graduated/{id}', 'StudentRecordController@not_graduated')->name('st.not_graduated');
             Route::get('list/{class_id}', 'StudentRecordController@listByClass')->name('students.list')->middleware('teamSAT');
+            Route::get('search', 'StudentRecordController@search_graduated')->name('students.search')->middleware('teamSAT');
 
             /* Promotions */
             Route::post('promote_selector', 'PromotionController@selector')->name('students.promote_selector');
@@ -171,4 +172,5 @@ Route::group(['namespace' => 'MyParent','middleware' => 'my_parent',], function(
 
 });
 
-Route::get('search', 'StudentRecordController@search')->name('students.search')->middleware('teamSAT');
+Route::get('/search', 'SearchController@search')->name('search');
+

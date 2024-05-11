@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <img src="./global_assets/images/searching.png" style="width:20%; margin-left: 230px" alt="">
                     <h5 class="mb-3" style="text-align: center; font-size: 20px; font-weight: bold; color: #007bff; margin-bottom: 20px;">Tìm kiếm văn bằng chứng chỉ</h5>
-                    <form method="GET" action="/tim-kiem">
+                    <form method="GET" action="/search">
                         <div class="form-group" style="margin-bottom: 15px;">
                             <label for="certificate-number" style="display: block; margin-bottom: 5px; font-weight: bold;">Số hiệu văn bằng chứng chỉ:</label>
                             <input type="text" id="certificate-number" name="certificate-number" class="form-control" placeholder="Nhập số hiệu văn bằng chứng chỉ" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">

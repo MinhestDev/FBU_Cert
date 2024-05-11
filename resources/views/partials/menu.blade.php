@@ -51,45 +51,6 @@
                     </a>
                 </li>
 
-                {{--Academics--}}
-                @if(Qs::userIsAcademic())
-                    <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['tt.index', 'ttr.edit', 'ttr.show', 'ttr.manage']) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                        <a href="#" class="nav-link"><i class="icon-graduation2"></i> <span> Học vấn</span></a>
-
-                        <ul class="nav nav-group-sub" data-submenu-title="Quản lý học vấn">
-
-                        {{--Thời khóa biểu--}}
-                            <li class="nav-item"><a href="{{ route('tt.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['tt.index']) ? 'active' : '' }}">Thời khóa biểu</a></li>
-                        </ul>
-                    </li>
-                @endif
-
-                {{--Administrative--}}
-                @if(Qs::userIsAdministrative())
-                    <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.show',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                        <a href="#" class="nav-link"><i class="icon-office"></i> <span> Hành chính</span></a>
-
-                        <ul class="nav nav-group-sub" data-submenu-title="Hành chính">
-
-                            {{--Thanh toán--}}
-                            @if(Qs::userIsTeamAccount())
-                            <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.edit', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'nav-item-expanded' : '' }}">
-
-                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Thanh toán</a>
-
-                                <ul class="nav nav-group-sub">
-                                    <li class="nav-item"><a href="{{ route('payments.create') }}" class="nav-link {{ Route::is('payments.create') ? 'active' : '' }}">Tạo thanh toán</a></li>
-                                    <li class="nav-item"><a href="{{ route('payments.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.show']) ? 'active' : '' }}">Quản lý thanh toán</a></li>
-                                    <li class="nav-item"><a href="{{ route('payments.manage') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.manage', 'payments.invoice', 'payments.receipts']) ? 'active' : '' }}">Thanh toán sinh viên</a></li>
-
-                                </ul>
-
-                            </li>
-                            @endif
-                        </ul>
-                    </li>
-                @endif
-
                 {{--Quản lý sinh viên--}}
                 @if(Qs::userIsTeamSAT())
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['students.create', 'students.list', 'students.edit', 'students.show', 'students.promotion', 'students.promotion_manage', 'students.graduated']) ? 'nav-item-expanded nav-item-open' : '' }} ">
@@ -139,25 +100,25 @@
                         <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Người dùng</span></a>
                     </li>
 
-                    {{--Quản lý lớp học--}}
+                    {{--Quản lý lớp--}}
                     <li class="nav-item">
                         <a href="{{ route('classes.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['classes.index','classes.edit']) ? 'active' : '' }}"><i class="icon-windows2"></i> <span> Lớp học</span></a>
                     </li>
 
                     {{--Quản lý ký túc xá--}}
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('dorms.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['dorms.index','dorms.edit']) ? 'active' : '' }}"><i class="icon-home9"></i> <span> Ký túc xá</span></a>
-                    </li>
+                    </li> --}}
 
                     {{--Quản lý phần--}}
                     <li class="nav-item">
-                        <a href="{{ route('sections.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['sections.index','sections.edit',]) ? 'active' : '' }}"><i class="icon-fence"></i> <span>Phần</span></a>
+                        <a href="{{ route('sections.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['sections.index','sections.edit',]) ? 'active' : '' }}"><i class="icon-fence"></i> <span>Ngành</span></a>
                     </li>
 
                     {{--Quản lý môn học--}}
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('subjects.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['subjects.index','subjects.edit',]) ? 'active' : '' }}"><i class="icon-pin"></i> <span>Môn học</span></a>
-                    </li>
+                    </li> --}}
                 @endif
 
                 {{--Kiểm tra--}}
