@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('page_title', 'Bảng điều khiển của tôi')
+@section('page_title', 'My Dashboard')
 @section('content')
 
     @if(Qs::userIsTeamSA())
@@ -9,7 +9,7 @@
                    <div class="media">
                        <div class="media-body">
                            <h3 class="mb-0">{{ $users->where('user_type', 'student')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs font-weight-bold">Tổng số học sinh</span>
+                           <span class="text-uppercase font-size-xs font-weight-bold">Tổng số văn bằng chứng chỉ</span>
                        </div>
 
                        <div class="ml-3 align-self-center">
@@ -24,7 +24,7 @@
                    <div class="media">
                        <div class="media-body">
                            <h3 class="mb-0">{{ $users->where('user_type', 'teacher')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Tổng số giáo viên</span>
+                           <span class="text-uppercase font-size-xs">Tổng số chứng chỉ tiếng Anh</span>
                        </div>
 
                        <div class="ml-3 align-self-center">
@@ -43,7 +43,7 @@
 
                        <div class="media-body text-right">
                            <h3 class="mb-0">{{ $users->where('user_type', 'admin')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Tổng số quản trị viên</span>
+                           <span class="text-uppercase font-size-xs">Tổng số bằng Tốt nghiệp</span>
                        </div>
                    </div>
                </div>
@@ -58,7 +58,7 @@
 
                        <div class="media-body text-right">
                            <h3 class="mb-0">{{ $users->where('user_type', 'parent')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Tổng số phụ huynh</span>
+                           <span class="text-uppercase font-size-xs">Total Parents</span>
                        </div>
                    </div>
                </div>
@@ -66,10 +66,10 @@
        </div>
        @endif
 
-    {{--Bắt đầu Lịch sự kiện--}}
+    {{--Events Calendar Begins--}}
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">Lịch sự kiện của trường</h5>
+            <h5 class="card-title">School Events Calendar</h5>
          {!! Qs::getPanelOptions() !!}
         </div>
 
@@ -77,5 +77,5 @@
             <div class="fullcalendar-basic"></div>
         </div>
     </div>
-    {{--Kết thúc Lịch sự kiện--}}
+    {{--Events Calendar Ends--}}
     @endsection

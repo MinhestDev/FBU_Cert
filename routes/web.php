@@ -174,3 +174,26 @@ Route::group(['namespace' => 'MyParent','middleware' => 'my_parent',], function(
 
 Route::get('/search', 'SearchController@search')->name('search');
 
+
+Route::get('/', function () {
+    return view('/employer/welcome');
+})->name('homepage');
+
+Route::get('/gioi-thieu', function () {
+    return view('/employer/gioithieu');
+})->name('gioithieu');
+
+Route::get('/tin-tuc', function () {
+    return view('tin-tuc');
+})->name('tin-tuc');
+
+Route::get('/lien-he', function () {
+    return view('lien-he');
+})->name('lien-he');
+
+Route::get('/dang-nhap', function () {
+    return view('dang-nhap');
+})->name('dang-nhap');
+
+
+

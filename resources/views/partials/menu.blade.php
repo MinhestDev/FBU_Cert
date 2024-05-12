@@ -87,7 +87,7 @@
                             </li>
 
                             {{--Sinh viên tốt nghiệp--}}
-                            <li class="nav-item"><a href="{{ route('students.graduated') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.graduated' ]) ? 'active' : '' }}">Sinh viên tốt nghiệp</a></li>
+                            {{--    <li class="nav-item"><a href="{{ route('students.graduated') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.graduated' ]) ? 'active' : '' }}">Sinh viên tốt nghiệp</a></li> --}}
                                 @endif
 
                         </ul>
@@ -121,60 +121,24 @@
                     </li> --}}
                 @endif
 
-                {{--Kiểm tra--}}
-                @if(Qs::userIsTeamSAT())
-                <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['exams.index', 'exams.edit', 'grades.index', 'grades.edit', 'marks.index', 'marks.manage', 'marks.bulk', 'marks.tabulation', 'marks.show', 'marks.batch_fix',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
-                    <a href="#" class="nav-link"><i class="icon-books"></i> <span> Cấp văn bằng chứng chỉ</span></a>
-
-                    <ul class="nav nav-group-sub" data-submenu-title="Quản lý kiểm tra">
-                        @if(Qs::userIsTeamSA())
-
-                        {{--Danh sách kỳ thi--}}
-                            <li class="nav-item">
-                                <a href="{{ route('exams.index') }}"
-                                   class="nav-link {{ (Route::is('exams.index')) ? 'active' : '' }}">Danh sách kỳ thi</a>
-                            </li>
-
-                            {{--Danh sách điểm--}}
-                            <li class="nav-item">
-                                    <a href="{{ route('grades.index') }}"
-                                       class="nav-link {{ in_array(Route::currentRouteName(), ['grades.index', 'grades.edit']) ? 'active' : '' }}">Điểm</a>
-                            </li>
-
-                            {{--Bảng điểm--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.tabulation') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.tabulation']) ? 'active' : '' }}">Bảng điểm</a>
-                            </li>
-
-                            {{--Sửa lỗi batch điểm--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.batch_fix') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.batch_fix']) ? 'active' : '' }}">Sửa lỗi batch</a>
-                            </li>
-                        @endif
-
-                        @if(Qs::userIsTeamSAT())
-                            {{--Quản lý điểm--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.index') }}"
-                                   class="nav-link {{ in_array(Route::currentRouteName(), ['marks.index']) ? 'active' : '' }}">Điểm</a>
-                            </li>
-
-                            {{--Bảng điểm--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.bulk') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.bulk', 'marks.show']) ? 'active' : '' }}">Bảng điểm</a>
-                            </li>
-
-                            @endif
-
-                    </ul>
-                </li>
-                @endif
-
-
                 {{--Kết thúc kiểm tra--}}
 
                 @include('pages.'.Qs::getUserType().'.menu')
+            {{--Tin tức--}}
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="icon-newspaper"></i>
+                    <span>Tin tức</span>
+                </a>
+            </li>
 
+            {{--Liên hệ--}}
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="icon-phone"></i>
+                    <span>Liên hệ</span>
+                </a>
+            </li>
                 {{--Quản lý tài khoản--}}
                 <li class="nav-item">
                     <a href="{{ route('my_account') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['my_account']) ? 'active' : '' }}"><i class="icon-user"></i> <span>Tài khoản của tôi</span></a>

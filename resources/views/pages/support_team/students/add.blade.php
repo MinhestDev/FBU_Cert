@@ -1,9 +1,9 @@
 @extends('layouts.master')
-@section('page_title', 'Nhập học sinh')
+@section('page_title', 'Nhập văn bằng chứng chỉ')
 @section('content')
     <div class="card">
         <div class="card-header bg-white header-elements-inline">
-            <h6 class="card-title">Vui lòng điền vào biểu mẫu dưới đây để nhập một học sinh mới</h6>
+            <h6 class="card-title">Vui lòng điền vào biểu mẫu dưới đây để nhập một văn bằng chứng chỉ mới</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
@@ -124,7 +124,7 @@
 
             </fieldset>
 
-            <h6>Thông tin học sinh</h6>
+            <h6>Thông tin văn bằng chứng chỉ</h6>
             <fieldset>
                 <div class="row">
                     <div class="col-md-3">
