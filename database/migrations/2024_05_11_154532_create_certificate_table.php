@@ -15,6 +15,17 @@ class CreateCertificateTable extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
+            $table->string('tenVBCC', 500);
+            $table->integer('soHieuVBCC');
+            $table->string('certificate_type');
+            $table->date('ngayCap');
+            $table->float('soDiem');
+            $table->string('hotenSV');
+            $table->string('tenLop');
+            $table->string('tenNganh');
+            $table->float('diemTB');
+            $table->string('xepLoai');
+            $table->date('ngaySinh');
             $table->timestamps();
         });
     }

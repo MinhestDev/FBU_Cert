@@ -8,9 +8,9 @@
         <ul>
             <li><a href="{{ route('homepage') }}">Trang chủ</a></li>
             <li><a href="{{ route('gioithieu') }}">Giới thiệu</a></li>
-            <li><a href="{{ route('tin-tuc') }}">Tin tức</a></li>
-            <li><a href="{{ route('lien-he') }}">Liên hệ</a></li>
-            <li><a href="{{ route('dang-nhap') }}">Đăng nhập</a></li>
+            <li><a href="{{ route('tintuc') }}">Tin tức</a></li>
+            <li><a href="{{ route('lienhe') }}">Liên hệ</a></li>
+            <li><a href="{{ route('dangnhap') }}">Đăng nhập</a></li>
         </ul>
     </nav>
 </header>

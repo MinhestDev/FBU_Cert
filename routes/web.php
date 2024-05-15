@@ -183,17 +183,17 @@ Route::get('/gioi-thieu', function () {
     return view('/employer/gioithieu');
 })->name('gioithieu');
 
-Route::get('/tin-tuc', function () {
-    return view('tin-tuc');
-})->name('tin-tuc');
+Route::get('/employer/tintuc', function () {
+    return view('/employer/tintuc');
+})->name('tintuc');
 
-Route::get('/lien-he', function () {
-    return view('lien-he');
-})->name('lien-he');
+Route::get('/employer/lienhe', function () {
+    return view('/employer/lienhe');
+})->name('lienhe');
 
-Route::get('/dang-nhap', function () {
-    return view('dang-nhap');
-})->name('dang-nhap');
+Route::get('/employer/dangnhap', function () {
+    return view('/employer/dangnhap');
+})->name('dangnhap');
 
 
 

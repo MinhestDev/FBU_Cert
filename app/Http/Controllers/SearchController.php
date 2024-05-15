@@ -9,21 +9,15 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        // $certificateNumber = $request->input('certificate-number');
-        // $name = $request->input('name');
+         $certificateNumber = $request->input('certificate_number');
+         $certificateType = $request->input('certificate_type');
+         $certificates = Certificate::query();
+         if($certificateType || $certificateNumber){
+             $certificates->where('soHieuVBCC', $certificateNumber)
+                           ->where('certificate_type', $certificateType);
+         }
+         $results = $certificates->get();
 
-        // $certificates = Certificate::query();
-
-        // if($certificateNumber){
-        //     $certificates->where('certificate-number', $certificateNumber);
-        // }
-
-        // if($name){
-        //     $certificates->where('name', 'like', "%".$name.'%');
-        // }
-
-        // $results = $certificates->get();
-
-        // return view('search.results', ['results' => $results]);
+        return view('search.results', ['results' => $results]);
     }
 }
